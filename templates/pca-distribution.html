@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PCA distribution</title>
+
+        <!-- Chart.js import -->
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <link rel="stylesheet" href="templates/styles.css">
+    </head>
+    <body>
+	<table class="logo">
+ 	 	<tr>
+    		<td><img src="templates/logo.jpg" width="466"></td>
+  		</tr>
+	</table>
+        <ul class="menu">
+              <li>
+                <a href="/" class="actif">Smell Prediction</a>
+              </li>
+              <li>
+                <a href="/pca-distribution">PCA Distribution</a>
+              </li>
+              <li>
+                <a href="/descriptor-variance">Descriptor Variance</a>
+              </li>
+		<li>
+                <a href="/cluster-by-pca">Cluster by PCA</a>
+              </li>
+        </ul>
+
+
+
+        <table class="chart-container">
+
+         <div id="container" width="100%" height="100%"></div>
+
+        </table>
+
+
+    <script>
+
+      const odor_berry = JSON.parse({{odor_berry|tojson}});
+      const odor_alliaceaous = JSON.parse({{odor_alliaceaous|tojson}});
+      const odor_coffee = JSON.parse({{odor_coffee|tojson}});
+      const odor_citrus = JSON.parse({{odor_citrus|tojson}});
+      const odor_fishy = JSON.parse({{odor_fishy|tojson}});
+      const odor_jasmine = JSON.parse({{odor_jasmine|tojson}});
+      const odor_minty = JSON.parse({{odor_minty|tojson}});
+      const odor_earthy = JSON.parse({{odor_earthy|tojson}});
+      const odor_smoky = JSON.parse({{odor_smoky|tojson}});
+
+    </script>
+
+    <script src="/static/js/highchart_pca.js"></script>
+
+
+
+
+	<table class="text">
+ 	 	<tr>
+    		<td width="1000">
+
+		<br /><br />
+		     PCA Distribution chart : This image shows how the data is distributed among principal components, which is important in understanding the relationships between different molecular properties and aroma impressions. The scatter plot of the principal components 1 vs 2 allows for the visualization of the analog data and analog descriptors, which can reveal patterns and correlations between different components.
+
+		<br /><br />
+
+
+		</td>
+  		</tr>
+	</table>
+
+	</table>
+	<table class="back">
+ 	 	<tr>
+    		<td><a href="javascript:history.back()"><img src="templates/back-btn.jpg" width="82"></td></a>
+  		</tr>
+	</table>
+
+
+
+    </body>
+</html>

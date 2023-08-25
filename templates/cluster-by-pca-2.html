@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cluster by pca</title>
+		        <!-- Chart.js import -->
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <link rel="stylesheet" href="templates/styles.css">
+    </head>
+    <body>
+	<table class="logo">
+ 	 	<tr>
+    		<td><img src="templates/logo.jpg" width="466"></td>
+  		</tr>
+	</table>
+        <ul class="menu">
+              <li>
+                <a href="/" class="actif">Smell Prediction</a>
+              </li>
+              <li>
+                <a href="/pca-distribution">PCA Distribution</a>
+              </li>
+              <li>
+                <a href="/descriptor-variance">Descriptor Variance</a>
+              </li>
+		<li>
+                <a href="/cluster-by-pca">Cluster by PCA</a>
+              </li>
+        </ul>
+
+		        <table class="chart-container">
+
+         <div id="container" width="100%" height="100%"></div>
+
+        </table>
+
+		            <script>
+
+              const segment_1 = JSON.parse({{segment_1|tojson}});
+              const segment_2 = JSON.parse({{segment_2|tojson}});
+              const segment_3 = JSON.parse({{segment_3|tojson}});
+              const segment_4 = JSON.parse({{segment_4|tojson}});
+              const segment_5 = JSON.parse({{segment_5|tojson}});
+              const segment_6 = JSON.parse({{segment_6|tojson}});
+              const segment_7 = JSON.parse({{segment_7|tojson}});
+
+
+            </script>
+
+	<table class="text">
+ 	 	<tr>
+    		<td width="1000">
+
+		<br /><br />
+		<b>Wiener index</b> : In chemical graph theory, the Wiener index (also Wiener number) introduced by Harry Wiener, is a topological index of a molecule, defined as the sum of the lengths of the shortest paths between all pairs of vertices in the chemical graph representing the non-hydrogen atoms in the molecule
+
+		<br /><br />
+</div>
+
+            <br>
+            <div class="row">
+            <b>CACT</b> (Chemo Aroma Clustering Tool): Enter the SMILE value in the form <br>
+            <b>Example :</b> CC(C)C1=CC2=C(CC1)C3(CCCC(C3CC2)(C)C=O)C
+            </div>
+
+
+            <br>
+
+        {% if message %}
+    		<p>{{ message }}</p>
+    	{% endif %}
+
+    	<form method="POST" action="{{ url_for('submit') }}">
+    		<label for="text">Enter SMILE:</label>
+    		<input type="text" name="text" id="text">
+    		<input type="submit" value="Submit"> Look for the black dot added to the graph.
+    	</form>
+        <br>
+        <div class="row">
+            Correlation/Prediction plot : This image shows the results of k-means clustering for predicting smell impression based on the chemical composition of the ingredients. This correlation is important in understanding the relationship between the molecular properties of different ingredients and the aroma impressions they create in the finished product. By using this information to design and develop new products, we can create better and more effective products that meet the needs and desires of consumers.
+        </div>
+
+            <br>
+
+        <div class="row">
+            The use of PCA K-Means clustering can further refine our analysis of smell impressions. In cluster-by-pca.png, we can see that smell groups were clustered closely, which provides proof that it is possible to predict similar kinds of flavor molecules with the same smell impressions. By identifying which molecular descriptors are most correlated with certain aroma impressions, we can optimize the recipe for a vegan croissant, for example, and create the best possible product.
+        </div>
+
+		</td>
+  		</tr>
+	</table>
+	<table class="back">
+ 	 	<tr>
+    		<td><a href="javascript:history.back()"><img src="templates/back-btn.jpg" width="82"></td></a>
+  		</tr>
+	</table>
+
+        <script src="/static/js/highchart_variance_v2.js"></script>
+
+    </body>
+</html>

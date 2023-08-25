@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Descriptor Variance</title>
+		        <!-- Chart.js import -->
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <link rel="stylesheet" href="templates/styles.css">
+    </head>
+    <body>
+	<table class="logo">
+ 	 	<tr>
+    		<td><img src="templates/logo.jpg" width="466"></td>
+  		</tr>
+	</table>
+        <ul class="menu">
+              <li>
+                <a href="/" class="actif">Smell Prediction</a>
+              </li>
+              <li>
+                <a href="/pca-distribution">PCA Distribution</a>
+              </li>
+              <li>
+                <a href="/descriptor-variance">Descriptor Variance</a>
+              </li>
+		<li>
+                <a href="/cluster-by-pca">Cluster by PCA</a>
+              </li>
+        </ul>
+
+
+            <script>
+
+              const descriptor_variance = JSON.parse({{descriptor_variance|tojson}});
+
+            </script>
+
+		        <table class="chart-container">
+
+         <div id="container" width="100%" height="100%"></div>
+
+        </table>
+
+
+	<table class="text">
+ 	 	<tr>
+    		<td width="1000">
+
+		<br /><br />
+		 Descriptors plot (descriptor-variance.png): This image shows the maximum variance among the descriptors, with the North-East Quadrant being the most helpful for clustering. By identifying which descriptors are most correlated with certain aroma impressions, we can gain a better understanding of how to optimize the recipe for a vegan croissant and create the best product possible.
+
+		<br /><br />
+
+
+		</td>
+  		</tr>
+	</table>
+	<table class="back">
+ 	 	<tr>
+    		<td><a href="javascript:history.back()"><img src="templates/back-btn.jpg" width="82"></td></a>
+  		</tr>
+	</table>
+
+	 <script src="/static/js/highchart_descriptor.js"></script>
+
+    </body>
+</html>
