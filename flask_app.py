@@ -1,6 +1,6 @@
 
 import sys
-sys.path.append('/home/lurching/.local/lib/python3.10/site-packages/')
+#sys.path.append('/home/lurching/.local/lib/python3.10/site-packages/')
 
 
 from flask import Flask, render_template, request
